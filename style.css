@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor0: #202020;
+    --cor1: #181818;
+    --cor2: #666666;
+    --cor3: #A1A1A1;
+    --cor4: #D6D6D6;
+    --cor5: #FFB700;
+    --fonte:'Comic Neue', cursive;;
+}
+
+body {
+
+    background-color: var(--cor0);
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--cor0);
+    color: #ffffff;
+    font-family: var(--fonte);
+    text-align: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 0px 4px 1px #000000; 
+    box-shadow: 0px 0px 4px 1px #000000;
+    margin: 8px 8px 0px 8px;
+    padding: 0px 10px;
+    border-radius: 40px;
+}
+
+#logo  {
+    width: 91px;
+    height: 91px;
+}
+
+#lgd {
+    width: 100vw;
+}
+
+.corpo {
+    display: flex;
+}
+
+nav {
+    max-width: 110px;
+    margin: 8px 8px 8px 8px;
+    padding: 30px 10px 0px 10px;
+}
+
+#paper {
+    width: 65px;
+    height: 65px;
+}
+
+main {
+    width: 100%;
+    min-height: 847px;
+    margin: 8px 8px 8px 8px;
+    background-color: var(--cor1);
+    border-radius: 40px;
+    box-shadow: inset 0px 0px 4px 6px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+footer {
+    height: 30px;
+    margin: 0px 8px 8px 8px;
+    background-color: var(--cor2);
+    border-radius: 40px;
+}
+
+.inputContainer h1{
+    /* GAMBIARRA */
+    font-size: 16px;
+    color: var(--cor4);
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.inputContainer {
+    /* GAMBIARRA */
+    margin-bottom: 30px;
+    color: var(--cor4);
+    display: block
+}
+
+.inputs {
+    width: 41.66666666666667vw;
+    min-width: 542px;
+    height: 30px;
+    background-color: var(--cor4);
+    border-radius: 40px;
+    display: inline-block;
+    margin: 5px 20px;
+    border: 0px;
+    padding-left: 10px;
+}
+
+.check input {
+    display: none;
+
+}
+
+.check input + label:before {
+    content: '';
+    width: 11px;
+    height: 11px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid gray;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-bottom: 3px;
+}
+
+.check input:checked + label:before {
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: var(--cor5);
+    background-position: center;
+    border: none;
+    padding: 1px;
+}
+
+button {
+    width: 125px;
+    height: 30px;
+    background-color: var(--cor5);
+    color: #000000;
+    border-radius: 40px;
+    display: block;
+    font-family: var(--fonte);
+    font-weight: bold;
+    border: 0px;
+    margin-right: 20px;
+    cursor: pointer;
+    position: relative;
+    left: 77%;
+}
+
+aside {
+    width: 34.7222222vw;
+    min-width: 452px;
+    height: 93.359375vh;
+    border-radius: 40px;
+    background-color: var(--cor2);
+    box-shadow: inset 0px 0px 4px 8px rgba(0, 0, 0, 0.25);
+    margin-top: 25px;
+    margin-bottom: 60px;
+    padding-top: 20px;
+}
+
+.dados {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+aside h1{
+    color: var(--cor4);
+    font-size: 22px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+}
+
+#input1Janela {
+    display: none;
+}
+
+#input2Janela {
+    display: none;
+}
+
+#input3Janela {
+    display: none;
+}
+
+#input1Split {
+    display: none;
+}
+
+#input2Split {
+    display: none;
+}
+
+#input3Split {
+    display: none;
+}
+
+#input4Split {
+    display: none;
+}
+
+#input5Split {
+    display: none;
+}

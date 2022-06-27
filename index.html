@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./script/script.js" defer></script>
+        <title>Los Gados Energy</title>
+    </head>
+
+    <body>
+
+        <header>
+            <img src="./imagens/perfil.png" alt="" id="logo">
+            <h1 id="lgd">Los Gados Energy</h1>
+        </header>
+
+        <div class="corpo">
+
+            <nav>
+                <img src="./imagens/paper.png" alt="" id="paper">
+            </nav>
+
+            <main>
+                <div class="dados">
+                    <div class="inputContainer">
+                        <h1>Área da casa (em m²):</h1>
+                        
+                        <input type="number" class="inputs" id="inputArea" placeholder="Área">
+                    </div>
+                    
+                    <div class="inputContainer">
+                        <h1>Potência das iluminações e tomadas (em kVA):</h1>
+                        
+                        <input type="number" class="inputs" id="inputC1" placeholder="Potência das iluminações e tomadas (em kVA)">
+                    </div>
+
+                    <div class="inputContainer">
+                        <h1>Potência dos aparelhos para aquecimento (em kVA):</h1>
+                        
+                        <input type="number" class="inputs" id="inputC2" placeholder="Potência dos aparelhos para aquecimento, ex: chuveiro, aquecedores, etc. (em kVA)">
+                    </div>
+
+                    <div class="inputContainer">
+                        <h1>Insira a quantidade de chuveiros na sua residência:</h1>
+                        
+                        <input type="number" class="inputs" id="numChuveiros" placeholder="Quantidade de chuveiros instalados">
+                    </div>
+                    
+                    <div class="inputContainer">
+                        <h1>Marque o(s) tipo(s) de ar(es) condicionado(s) instalado(s) em sua casa:</h1>
+                        
+                        <br>
+
+                        <div class="check">
+                            <input type="checkbox" id="checkJanela" onclick="checking()">
+                            <label for="checkJanela"></label> JANELA
+                        </div>
+
+                        <br>
+
+                        <div class="check">
+                            <input type="checkbox" id="checkSplit" onclick="checking()">
+                            <label for="checkSplit"></label> SPLIT
+                        </div>
+                    </div>
+
+                    <div class="inputContainer" id="input1Janela">
+                        <h1>Quantos deles (JANELA) têm uma potência MENOR OU IGUAL a 9000 BTU/h?</h1>
+
+                        <input type="number" class="inputs" id=janelaMenor9k" placeholder="Número de ares condicionados JANELA com potência <= 9000 BTU/h"">
+                    </div>
+
+                    <div class="inputContainer" id="input2Janela">
+                        <h1>Quantos deles (JANELA) têm uma potência de 9001 a 14000 BTU/h?</h1>
+
+                        <input type="number" class="inputs" id="janelaMenor14k" placeholder="Número de ares condicionados JANELA com potência >= 9001 <= 14000 BTU/h">
+                    </div>
+
+                    <div class="inputContainer" id="input3Janela">
+                        <h1>Quantos deles (JANELA) têm uma potência maior que 14000 BTU/h?</h1>
+
+                        <input type="number" class="inputs" id="janelaMaior14k" placeholder="Número de ares condicionados JANELA com potência > 14000 BTU/h">
+                    </div>
+
+                    <div class="inputContainer" id="input1Split">
+                        <h1>Quantos deles (SPLIT) têm uma potência MENOR OU IGUAL a 10000 BTU/h?</h1>
+
+                        <input type="number" class="inputs" id="splitMenor10k" placeholder="Número de ares condicionados SPLIT com potência <= 10000 BTU/h">
+                    </div>
+
+                    <div class="inputContainer" id="input2Split">
+                        <h1>Quantos deles (SPLIT) têm uma potência de 10001 a 15000 BTU/h?</h1>
+
+                        <input type="number" class="inputs" id="splitMenor15k" placeholder="Número de ares condicionados SPLIT com potência >= 10001 <= 15000 BTU/h">
+                    </div>
+
+                    <div class="inputContainer" id="input3Split">
+                        <h1>Quantos deles (SPLIT) têm uma potência de 15001 a 20000 BTU/h?</h1>
+
+                        <input type="number" class="inputs" id="splitMenor20k" placeholder="Número de ares condicionados SPLIT com potência >= 15001 <= 20000 BTU/h">
+                    </div>
+
+                    <div class="inputContainer" id="input4Split">
+                        <h1>Quantos deles (SPLIT) têm uma potência de 20001 a 30000 BTU/h?</h1>
+
+                        <input type="number" class="inputs" id="splitMenor30k" placeholder="Número de ares condicionados SPLIT com potência >= 20001 <= 30000 BTU/h">
+                    </div>
+
+                    <div class="inputContainer" id="input5Split">
+                        <h1>Quantos deles (SPLIT) têm uma potência maior que 30000 BTU/h?</h1>
+
+                        <input type="number" class="inputs" id="splitMaior30k" placeholder="Número de ares condicionados SPLIT com potência > 30000 BTU/h">
+                    </div>
+
+                    <button type="submit" onclick="calc()" >Calcular</button>
+                </div>
+
+                <aside>
+                    <div>
+                        <h1 id="h1Area"></h1>
+                        <h1 id="c1Area"></h1>
+                        <h1 id="c1Cargas"></h1>
+                        <h1 id="h1D1"></h1>
+                        <h1 id="h1C2"></h1>
+                        <h1 id="h1D2"></h1>
+                        <h1 id="h1C3"></h1>
+                        <h1 id="h1D3"></h1>
+                    </div>
+                </aside>
+            </main>
+
+        </div>
+
+        <footer>
+        </footer>
+    </body>
+</html>
