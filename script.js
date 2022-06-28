@@ -113,29 +113,77 @@ function calc() {
     h1D2.innerHTML = "Demanda (D2) = " + d2 + " kVA"
 
     //C3
-    let janelaMenor9k = parseInt(document.getElementById("janelaMenor9k").value)
+    var display1Janela = document.getElementById("input1Janela").style.display
+    var janelaMenor9k = document.getElementById("janelaMenor9k")
+    if (display1Janela == "none") {
+        janelaMenor9k === 0
+    } else if (display1Janela == "block") {
+        janelaMenor9k = parseInt(document.getElementById("janelaMenor9k").value)
+    }
+
+    var display2Janela = document.getElementById("input2Janela").style.display
+    var janelaMenor14k = document.getElementById("janelaMenor14k")
+    if (display2Janela == "none") {
+        janelaMenor14k === 0
+    } else if (display2Janela == "block") {
+        janelaMenor14k = parseInt(document.getElementById("janelaMenor14k").value)
+    }
+
+    var display3Janela = document.getElementById("input3Janela").style.display
+    var janelaMaior14k = document.getElementById("janelaMaior14k")
+    if (display3Janela == "none") {
+        janelaMaior14k === 0
+    } else if (display3Janela == "block") {
+        janelaMaior14k = parseInt(document.getElementById("janelaMaior14k").value)
+    }
+
+    var display1Split = document.getElementById("input1Split").style.display
+    var splitMenor10k = document.getElementById("splitMenor10k")
+    if (display1Split == "none") {
+        splitMenor10k === 0
+    } else if (display1Split == "block") {
+        splitMenor10k = parseInt(document.getElementById("splitMenor10k").value)
+    }
+
+    var display2Split = document.getElementById("input2Split").style.display
+    var splitMenor15k = document.getElementById("splitMenor15k")
+    if (display2Split == "none") {
+        splitMenor15k === 0
+    } else if (display2Split == "block") {
+        splitMenor15k = parseInt(document.getElementById("splitMenor15k").value)
+    }
+
+    var display3Split = document.getElementById("input3Split").style.display
+    var splitMenor20k = document.getElementById("splitMenor20k")
+    if (display3Split == "none") {
+        splitMenor20k === 0
+    } else if (display3Split == "block") {
+        splitMenor20k = parseInt(document.getElementById("splitMenor20k").value)
+    }
+
+    var display4Split = document.getElementById("input4Split").style.display
+    var splitMenor30k = document.getElementById("splitMenor30k")
+    if (display4Split == "none") {
+        splitMenor30k === 0
+    } else if (display4Split == "block") {
+        splitMenor30k = parseInt(document.getElementById("splitMenor30k").value)
+    }
+
+    var display5Split = document.getElementById("input5Split").style.display
+    var splitMaior30k = document.getElementById("splitMaior30k")
+    if (display5Split == "none") {
+        splitMaior30k === 0
+    } else if (display5Split == "block") {
+        splitMaior30k = parseInt(document.getElementById("splitMaior30k").value)
+    }
+
     let valorJanelaMenor9k = parseFloat(janelaMenor9k * 0.58)
-
-    let janelaMenor14k = parseInt(document.getElementById("janelaMenor14k").value)
     let valorJanelaMenor14k = parseFloat(janelaMenor14k * 0.82)
-
-    let janelaMaior14k = parseInt(document.getElementById("janelaMaior14k").value)
     let valorJanelaMaior14k = parseFloat(janelaMaior14k * 1.69)
-
-    let splitMenor10k = parseInt(document.getElementById("splitMenor10k").value)
     let valorSplitMenor10k = parseFloat(splitMenor10k * 0.65)
-
-    let splitMenor15k = parseInt(document.getElementById("splitMenor15k").value)
     let valorSplitMenor15k = parseFloat(splitMenor15k * 0.88)
-
-    let splitMenor20k = parseInt(document.getElementById("splitMenor20k").value)
     let valorSplitMenor20k = parseFloat(splitMenor20k * 1.22)
-
-    let splitMenor30k = parseInt(document.getElementById("splitMenor30k").value)
     let valorSplitMenor30k = parseFloat(splitMenor30k * 1.99)
-
-    let splitMaior30k = parseInt(document.getElementById("splitMaior30k").value)
     let valorSplitMaior30k = parseFloat(splitMaior30k * 3.08)
-
     let numAres = parseInt(janelaMenor9k + janelaMenor14k + janelaMaior14k + splitMenor10k + splitMenor15k + splitMenor20k + splitMenor30k + splitMaior30k)
 }
