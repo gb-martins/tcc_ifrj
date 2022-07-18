@@ -1,30 +1,28 @@
 function checking() {
     let checkJanela = document.getElementById("checkJanela")
     if (checkJanela.checked == true) {
-        document.getElementById("input1Janela").style.display = "block"
-        document.getElementById("input2Janela").style.display = "block"
-        document.getElementById("input3Janela").style.display = "block"
-    }
-    else {
-        document.getElementById("input1Janela").style.display = "none"
-        document.getElementById("input2Janela").style.display = "none"
-        document.getElementById("input3Janela").style.display = "none"
+        var input1Janela = document.getElementById("input1Janela").style.display = "block"
+        var input2Janela = document.getElementById("input2Janela").style.display = "block"
+        var input3Janela = document.getElementById("input3Janela").style.display = "block"
+    } else {
+        input1Janela = document.getElementById("input1Janela").style.display = "none"
+        input2Janela = document.getElementById("input2Janela").style.display = "none"
+        input3Janela = document.getElementById("input3Janela").style.display = "none"
     }
     
     let checkSplit = document.getElementById("checkSplit")
     if (checkSplit.checked == true) {
-        document.getElementById("input1Split").style.display = "block"
-        document.getElementById("input2Split").style.display = "block"
-        document.getElementById("input3Split").style.display = "block"
-        document.getElementById("input4Split").style.display = "block"
-        document.getElementById("input5Split").style.display = "block"
-    }
-    else {
-        document.getElementById("input1Split").style.display = "none"
-        document.getElementById("input2Split").style.display = "none"
-        document.getElementById("input3Split").style.display = "none"
-        document.getElementById("input4Split").style.display = "none"
-        document.getElementById("input5Split").style.display = "none"
+        var input1Split = document.getElementById("input1Split").style.display = "block"
+        var input2Split = document.getElementById("input2Split").style.display = "block"
+        var input3Split = document.getElementById("input3Split").style.display = "block"
+        var input4Split = document.getElementById("input4Split").style.display = "block"
+        var input5Split = document.getElementById("input5Split").style.display = "block"
+    } else {
+        input1Split = document.getElementById("input1Split").style.display = "none"
+        input2Split = document.getElementById("input2Split").style.display = "none"
+        input3Split = document.getElementById("input3Split").style.display = "none"
+        input4Split = document.getElementById("input4Split").style.display = "none"
+        input5Split = document.getElementById("input5Split").style.display = "none"
     }
 }
 
@@ -47,8 +45,7 @@ function calc() {
         document.getElementById("c1Area").style.color = "#90ee90"
         document.getElementById("c1Cargas").style.color = "#8b0000"
         c1Utilizado = cargaMin
-    }
-    else{
+    } else{
         document.getElementById("c1Area").style.color = "#8b0000"
         document.getElementById("c1Cargas").style.color = "#90ee90"
         c1Utilizado = c1
@@ -74,8 +71,7 @@ function calc() {
         somaDecC1 += parseFloat(resultadoDecC1.toFixed(2))
 
         var d1 = parseFloat(somaIntC1 + somaDecC1).toFixed(2)
-    }
-    else if (c1Int > 10) {
+    } else if (c1Int > 10) {
         let novoInt = c1Int - 10
         var somaNovoIntC1 = 0
 
@@ -113,77 +109,91 @@ function calc() {
     h1D2.innerHTML = "Demanda (D2) = " + d2 + " kVA"
 
     //C3
-    var display1Janela = document.getElementById("input1Janela").style.display
-    var janelaMenor9k = document.getElementById("janelaMenor9k")
+    let display1Janela = input1Janela.style.display
     if (display1Janela == "none") {
-        janelaMenor9k === 0
-    } else if (display1Janela == "block") {
+        var janelaMenor9k = document.getElementById("janelaMenor9k").value = 0
+    } else {
         janelaMenor9k = parseInt(document.getElementById("janelaMenor9k").value)
     }
+    let kvaJanelaMenor9k = parseFloat(janelaMenor9k * 0.58)
 
-    var display2Janela = document.getElementById("input2Janela").style.display
-    var janelaMenor14k = document.getElementById("janelaMenor14k")
+    let display2Janela = input2Janela.style.display
     if (display2Janela == "none") {
-        janelaMenor14k === 0
-    } else if (display2Janela == "block") {
+        var janelaMenor14k = document.getElementById("janelaMenor14k").value = 0
+    } else {
         janelaMenor14k = parseInt(document.getElementById("janelaMenor14k").value)
     }
+    let kvaJanelaMenor14k = parseFloat(janelaMenor14k * 0.82)
 
-    var display3Janela = document.getElementById("input3Janela").style.display
-    var janelaMaior14k = document.getElementById("janelaMaior14k")
+    let display3Janela = input3Janela.style.display
     if (display3Janela == "none") {
-        janelaMaior14k === 0
-    } else if (display3Janela == "block") {
+        var janelaMaior14k = document.getElementById("janelaMaior14k").value = 0
+    } else {
         janelaMaior14k = parseInt(document.getElementById("janelaMaior14k").value)
     }
+    let kvaJanelaMaior14k = parseFloat(janelaMaior14k * 1.69)
 
-    var display1Split = document.getElementById("input1Split").style.display
-    var splitMenor10k = document.getElementById("splitMenor10k")
+    let display1Split = input1Split.style.display
     if (display1Split == "none") {
-        splitMenor10k === 0
-    } else if (display1Split == "block") {
+        var splitMenor10k = document.getElementById("splitMenor10k").value = 0
+    } else {
         splitMenor10k = parseInt(document.getElementById("splitMenor10k").value)
     }
+    let kvaSplitMenor10k = parseFloat(splitMenor10k * 0.65)
 
-    var display2Split = document.getElementById("input2Split").style.display
-    var splitMenor15k = document.getElementById("splitMenor15k")
+    let display2Split = input2Split.style.display
     if (display2Split == "none") {
-        splitMenor15k === 0
-    } else if (display2Split == "block") {
+        var splitMenor15k = document.getElementById("splitMenor15k").value = 0
+    } else {
         splitMenor15k = parseInt(document.getElementById("splitMenor15k").value)
     }
+    let kvaSplitMenor15k = parseFloat(splitMenor15k * 0.88)
 
-    var display3Split = document.getElementById("input3Split").style.display
-    var splitMenor20k = document.getElementById("splitMenor20k")
+    let display3Split = input3Split.style.display
     if (display3Split == "none") {
-        splitMenor20k === 0
-    } else if (display3Split == "block") {
+        var splitMenor20k = document.getElementById("splitMenor20k").value = 0
+    } else {
         splitMenor20k = parseInt(document.getElementById("splitMenor20k").value)
     }
+    let kvaSplitMenor20k = parseFloat(splitMenor20k * 1.22)
 
-    var display4Split = document.getElementById("input4Split").style.display
-    var splitMenor30k = document.getElementById("splitMenor30k")
+    let display4Split = input4Split.style.display
     if (display4Split == "none") {
-        splitMenor30k === 0
-    } else if (display4Split == "block") {
+        var splitMenor30k = document.getElementById("splitMenor30k").value = 0
+    } else {
         splitMenor30k = parseInt(document.getElementById("splitMenor30k").value)
     }
+    let kvaSplitMenor30k = parseFloat(splitMenor30k * 1.99)
 
-    var display5Split = document.getElementById("input5Split").style.display
-    var splitMaior30k = document.getElementById("splitMaior30k")
+    let display5Split = input5Split.style.display
     if (display5Split == "none") {
-        splitMaior30k === 0
-    } else if (display5Split == "block") {
+        var splitMaior30k = document.getElementById("splitMaior30k").value = 0
+    } else {
         splitMaior30k = parseInt(document.getElementById("splitMaior30k").value)
     }
+    let kvaSplitMaior30k = parseFloat(splitMaior30k * 3.08)
+    let c3 = parseFloat((kvaJanelaMenor9k + kvaJanelaMenor14k + kvaJanelaMaior14k + kvaSplitMenor10k + kvaSplitMenor15k + kvaSplitMenor20k + kvaSplitMenor30k + kvaSplitMaior30k).toFixed(2))
+    let h1C3 = document.getElementById("h1C3")
+    h1C3.innerHTML = "Carga Instalada 3 (C3) = " + c3 + " kVA"
 
-    let valorJanelaMenor9k = parseFloat(janelaMenor9k * 0.58)
-    let valorJanelaMenor14k = parseFloat(janelaMenor14k * 0.82)
-    let valorJanelaMaior14k = parseFloat(janelaMaior14k * 1.69)
-    let valorSplitMenor10k = parseFloat(splitMenor10k * 0.65)
-    let valorSplitMenor15k = parseFloat(splitMenor15k * 0.88)
-    let valorSplitMenor20k = parseFloat(splitMenor20k * 1.22)
-    let valorSplitMenor30k = parseFloat(splitMenor30k * 1.99)
-    let valorSplitMaior30k = parseFloat(splitMaior30k * 3.08)
-    let numAres = parseInt(janelaMenor9k + janelaMenor14k + janelaMaior14k + splitMenor10k + splitMenor15k + splitMenor20k + splitMenor30k + splitMaior30k)
+    //D3
+    let numAres = (janelaMenor9k + janelaMenor14k + janelaMaior14k + splitMenor10k + splitMenor15k + splitMenor20k + splitMenor30k + splitMaior30k)
+    fatorDemanda = [1, 0.7, 0.6, 0.55, 0.53, 0.52, 0.5]
+    if (numAres >= 0 && numAres <= 4) {
+        var d3 = parseFloat((c3 * fatorDemanda[0]).toFixed(2))
+    } else if (numAres > 4 && numAres <= 10) {
+        d3 = parseFloat((c3 * fatorDemanda[1]).toFixed(2))
+    } else if (numAres > 10 && numAres <= 20) {
+        d3 = parseFloat((c3 * fatorDemanda[2]).toFixed(2))
+    } else if (numAres > 20 && numAres <= 30) {
+        d3 = parseFloat((c3 * fatorDemanda[3]).toFixed(2))
+    } else if (numAres > 30 && numAres <= 40) {
+        d3 = parseFloat((c3 * fatorDemanda[4]).toFixed(2))
+    } else if (numAres > 40 && numAres <= 50) {
+        d3 = parseFloat((c3 * fatorDemanda[5]).toFixed(2))
+    } else if (numAres > 50) {
+        d3 = parseFloat((c3 * fatorDemanda[6]).toFixed(2))
+    }
+    let h1D3 = document.getElementById("h1D3")
+    h1D3.innerHTML = "Demanda (D3) = " + d3 + " kVA"
 }
