@@ -206,11 +206,17 @@ aside h1{
     display: none;
 }
 
-.radio input {
+#radioContainer input {
     display: none;
 }
 
-.radio input + label:before {
+#bombasContainer button {
+    width: 100px;
+    position: relative;
+    left: 75%;
+}
+
+#radioContainer input + label:before {
     content: '';
     width: 11px;
     height: 11px;
@@ -223,9 +229,25 @@ aside h1{
     margin-bottom: 3px;
 }
   
-.radio input:checked + label:before {
+#radioContainer input:checked + label:before {
     background-color: white;
     box-sizing: border-box;
     border: 4px solid var(--cor5);
     padding: 3px;
+}
+
+#radioContainer {
+    display: none;
+}
+
+#bombaUnica {
+    display: none;
+}
+
+#bombasIguais {
+    display: none;
+}
+
+.demanda {
+    color: var(--cor5);
 }
