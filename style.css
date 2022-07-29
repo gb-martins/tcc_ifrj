@@ -20,8 +20,13 @@ body {
 
     background-color: var(--cor0);
     width: 100%;
+    font-family: var(--fonte);
+    color: var(--cor4);
 }
 
+header h1 {
+    font-size: 52px;
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -30,8 +35,6 @@ header {
     font-family: var(--fonte);
     text-align: center;
     align-items: center;
-    -webkit-box-shadow: 0px 0px 4px 1px #000000; 
-    box-shadow: 0px 0px 4px 1px #000000;
     margin: 8px 8px 0px 8px;
     padding: 0px 10px;
     border-radius: 40px;
@@ -54,6 +57,7 @@ nav {
     max-width: 110px;
     margin: 8px 8px 8px 8px;
     padding: 30px 10px 0px 10px;
+    min-width: 91px;
 }
 
 #paper {
@@ -66,7 +70,7 @@ main {
     min-height: 847px;
     margin: 8px 8px 8px 8px;
     background-color: var(--cor1);
-    border-radius: 40px;
+    border-radius: 20px;
     box-shadow: inset 0px 0px 4px 6px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-wrap: wrap;
@@ -81,31 +85,55 @@ footer {
     border-radius: 40px;
 }
 
-.inputContainer h1{
-    /* GAMBIARRA */
-    font-size: 16px;
-    color: var(--cor4);
-    margin-top: 10px;
-    margin-left: 25px;
-}
-
 .inputContainer {
-    /* GAMBIARRA */
-    margin-bottom: 30px;
-    color: var(--cor4);
-    display: block
+    position: relative;
+    margin: 25px 0px 20px 0px ;
+    font-weight: bold;
+
 }
 
-.inputs {
+input {
     width: 41.66666666666667vw;
     min-width: 542px;
     height: 30px;
     background-color: var(--cor4);
-    border-radius: 40px;
+    border-radius: 20px;
     display: inline-block;
-    margin: 5px 20px;
-    border: 0px;
+    font-family: var(--fonte);
+    color: var(black);
+}
+
+.input-label {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    transform: translate(2px, 6px);
+    transition: transform .1s;
+    color: var(--cor1);
+    cursor: text;
+}
+
+.input:focus+.input-label, .input:valid+.input-label {
+    transform: translate(0px, -22px) scale(1);
+    left: 0;
+    color: var(--cor4);
+    padding-inline: 5px;
+    background-color: var(--cor1);
+}
+
+.input:is(:focus, :valid) {
     padding-left: 10px;
+}
+
+input[type="number"] {
+    outline: none;
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .check input {
@@ -127,7 +155,7 @@ footer {
 
 .check input:checked + label:before {
     background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
-    background-color: var(--cor5);
+    background-color: var(--cor1);
     background-position: center;
     border: none;
     padding: 1px;
@@ -136,9 +164,8 @@ footer {
 button {
     width: 125px;
     height: 30px;
-    background-color: var(--cor5);
     color: #000000;
-    border-radius: 40px;
+    border-radius: 4px;
     display: block;
     font-family: var(--fonte);
     font-weight: bold;
@@ -146,14 +173,33 @@ button {
     margin-right: 20px;
     cursor: pointer;
     position: relative;
-    left: 77%;
+    left: 81.5%;
+    box-shadow: 2px 2px 0px 2px rgba(0, 0, 0, 0.25);
+}
+
+.shimmer-btn {
+    background-color: var(--cor3);
+    background-image: linear-gradient(
+        -60deg,
+        transparent, transparent 40%,
+        #ffffff44 40%, #ffffff44 60%,
+        transparent 60%, transparent 100%
+    );
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    background-position-x: 150%;
+}
+
+.shimmer-btn:hover {
+    background-position-x: -150%;
+    transition: background-position-x 900ms;
 }
 
 aside {
     width: 34.7222222vw;
     min-width: 452px;
     height: 93.359375vh;
-    border-radius: 40px;
+    border-radius: 20px;
     background-color: var(--cor2);
     box-shadow: inset 0px 0px 4px 8px rgba(0, 0, 0, 0.25);
     margin-top: 25px;
@@ -211,9 +257,10 @@ aside h1{
 }
 
 #bombasContainer button {
-    width: 100px;
+    width: 125px;
     position: relative;
-    left: 75%;
+    left: 81.5%;
+    margin-top: 20px;
 }
 
 #radioContainer input + label:before {
@@ -250,4 +297,27 @@ aside h1{
 
 .demanda {
     color: var(--cor5);
+}
+
+h1 {
+    font-size: 16px;
+    color: var(--cor4);
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    background-color: var(--cor4);
+}
+
+select::-ms-expand {
+    display: none;
+}
+.select {
+    position: relative;
+    display: flex;
+    height: 30px;
 }
