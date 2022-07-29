@@ -4,48 +4,45 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/style.css">
-        <script src="./script/script.js" defer></script>
+        <link rel="shortcut icon" href="./imagens/logo branca.png" type="image/icon">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
         <title>Los Gados Energy</title>
     </head>
 
     <body>
 
         <header>
-            <img src="./imagens/perfil.png" alt="" id="logo">
+            <img src="./imagens/logo branca.png" alt="" id="logo">
             <h1 id="lgd">Los Gados Energy</h1>
         </header>
 
         <div class="corpo">
 
             <nav>
-                <img src="./imagens/paper.png" alt="" id="paper">
+
             </nav>
 
             <main>
                 <div class="dados" id="dados">
                     <div class="inputContainer">
-                        <h1>Área da casa (em m²):</h1>
-                        
-                        <input type="number" class="inputs" id="inputArea" placeholder="Área">
+                        <input type="number" id="inputArea" required class="input" required>
+                        <label for="inputArea" class="input-label">Área da casa (em m²):</label>
                     </div>
                     
                     <div class="inputContainer">
-                        <h1>Potência das iluminações e tomadas (em kVA):</h1>
-                        
-                        <input type="number" class="inputs" id="inputC1" placeholder="Potência das iluminações e tomadas (em kVA)">
+                        <input type="number" id="inputC1" required class="input" required>
+                        <label for="inputC1" class="input-label">Potência das iluminações e tomadas (em kVA):</label>
                     </div>
 
-                    <div class="inputContainer">
-                        <h1>Potência dos aparelhos para aquecimento (em kVA):</h1>
-                        
-                        <input type="number" class="inputs" id="inputC2" placeholder="Potência dos aparelhos para aquecimento, ex: chuveiro, aquecedores, etc. (em kVA)">
+                    <div class="inputContainer"> 
+                        <input type="number" id="inputC2" required class="input" required>
+                        <label for="inputC2" class="input-label">Potência dos aparelhos para aquecimento (em kVA):</label>
                     </div>
 
-                    <div class="inputContainer">
-                        <h1>Insira a quantidade de chuveiros na sua residência:</h1>
-                        
-                        <input type="number" class="inputs" id="numChuveiros" placeholder="Quantidade de chuveiros instalados">
+                    <div class="inputContainer">                      
+                        <input type="number" id="numChuveiros" required class="input" required>
+                        <label for="numChuveiros" class="input-label">Insira a quantidade de chuveiros na sua residência:</label>
                     </div>
                     
                     <div class="inputContainer">
@@ -55,79 +52,70 @@
 
                         <div class="check">
                             <input type="checkbox" id="checkJanela" onclick="checking()">
-                            <label for="checkJanela"></label> JANELA
+                            <label for="checkJanela">Janela</label> 
                         </div>
 
                         <br>
 
                         <div class="check">
                             <input type="checkbox" id="checkSplit" onclick="checking()">
-                            <label for="checkSplit"></label> SPLIT
+                            <label for="checkSplit">Split</label> 
                         </div>
                     </div>
 
                     <div class="inputContainer" id="input1Janela">
-                        <h1>Quantos deles (JANELA) têm uma potência MENOR OU IGUAL a 9000 BTU/h?</h1>
-
-                        <input type="number" class="inputs" id="janelaMenor9k" placeholder="Número de ares condicionados JANELA com potência <= 9000 BTU/h">
+                        <input type="number" id="janelaMenor9k" required class="input" required>
+                        <label for="janelaMenor9k" class="input-label">Quantos deles (JANELA) têm uma potência MENOR OU IGUAL a 9k BTU/h?</label>
                     </div>
 
                     <div class="inputContainer" id="input2Janela">
-                        <h1>Quantos deles (JANELA) têm uma potência de 9001 a 14000 BTU/h?</h1>
-
-                        <input type="number" class="inputs" id="janelaMenor14k" placeholder="Número de ares condicionados JANELA com potência >= 9001 <= 14000 BTU/h">
+                        <input type="number" id="janelaMenor14k" required class="input" required>
+                        <label for="janelaMenor14k" class="input-label">Quantos deles (JANELA) têm uma potência de 9001 a 14k BTU/h?</label>
                     </div>
 
                     <div class="inputContainer" id="input3Janela">
-                        <h1>Quantos deles (JANELA) têm uma potência maior que 14000 BTU/h?</h1>
-
-                        <input type="number" class="inputs" id="janelaMaior14k" placeholder="Número de ares condicionados JANELA com potência > 14000 BTU/h">
+                        <input type="number" id="janelaMaior14k" required class="input" required>
+                        <label for="janelaMaior14k" class="input-label">Quantos deles (JANELA) têm uma potência maior que 14k BTU/h?</label>
                     </div>
 
                     <div class="inputContainer" id="input1Split">
-                        <h1>Quantos deles (SPLIT) têm uma potência MENOR OU IGUAL a 10000 BTU/h?</h1>
-
-                        <input type="number" class="inputs" id="splitMenor10k" placeholder="Número de ares condicionados SPLIT com potência <= 10000 BTU/h">
+                        <input type="number" id="splitMenor10k" required class="input" required>
+                        <label for="splitMenor10k" class="input-label">Quantos deles (SPLIT) têm uma potência MENOR OU IGUAL a 10k BTU/h?</label>
                     </div>
 
                     <div class="inputContainer" id="input2Split">
-                        <h1>Quantos deles (SPLIT) têm uma potência de 10001 a 15000 BTU/h?</h1>
-
-                        <input type="number" class="inputs" id="splitMenor15k" placeholder="Número de ares condicionados SPLIT com potência >= 10001 <= 15000 BTU/h">
+                        <input type="number" id="splitMenor15k" required class="input" required>
+                        <label for="splitMenor15k" class="input-label">Quantos deles (SPLIT) têm uma potência de 10001 a 15k BTU/h?</label>
                     </div>
 
                     <div class="inputContainer" id="input3Split">
-                        <h1>Quantos deles (SPLIT) têm uma potência de 15001 a 20000 BTU/h?</h1>
-
-                        <input type="number" class="inputs" id="splitMenor20k" placeholder="Número de ares condicionados SPLIT com potência >= 15001 <= 20000 BTU/h">
+                        <input type="number" id="splitMenor20k" required class="input" required>
+                        <label for="splitMenor20k" class="input-label">Quantos deles (SPLIT) têm uma potência de 15001 a 20k BTU/h?</label>
                     </div>
 
                     <div class="inputContainer" id="input4Split">
-                        <h1>Quantos deles (SPLIT) têm uma potência de 20001 a 30000 BTU/h?</h1>
-
-                        <input type="number" class="inputs" id="splitMenor30k" placeholder="Número de ares condicionados SPLIT com potência >= 20001 <= 30000 BTU/h">
+                        <input type="number" id="splitMenor30k" required class="input" required>
+                        <label for="splitMenor30k" class="input-label">Quantos deles (SPLIT) têm uma potência de 20001 a 30k BTU/h?</label>
                     </div>
 
                     <div class="inputContainer" id="input5Split">
-                        <h1>Quantos deles (SPLIT) têm uma potência maior que 30000 BTU/h?</h1>
-
-                        <input type="number" class="inputs" id="splitMaior30k" placeholder="Número de ares condicionados SPLIT com potência > 30000 BTU/h">
+                        <input type="number" id="splitMaior30k" required class="input" required>
+                        <label for="splitMaior30k" class="input-label">Quantos deles (SPLIT) têm uma potência maior que 30k BTU/h?</label>
                     </div>
 
                     <div class="inputContainer" id="bombasContainer">
-                        <h1>Insira a quantidade de bombas d'água na sua residência:</h1>
-
-                        <input type="number" class="inputs" id="numBombas" placeholder="Número de bombas d'água instaladas">
+                        <input type="number" id="numBombas" required class="input" required>
+                        <label for="numBombas" class="input-label">Insira a quantidade de bombas d'água na sua residência:</label>
 
                         <br>
 
-                        <button type="submit" onclick="confBombas()">Confirmar nº de bombas</button>
+                        <button class="shimmer-btn" type="submit" onclick="confBombas()">Confirmar nº de bombas</button>
                     </div>
 
                     <div class="inputContainer" id="bombaUnica">
                         <h1>Selecione a potência de sua bomba d'água (em CV):</h1>
 
-                        <select name="valueBombaUnica" id="selectBombaUnica">
+                        <select class="select" name="valueBombaUnica" id="selectBombaUnica">
                             <option value="0.25">1/4</option>
                             <option value="0.33">1/3</option>
                             <option value="0.5">1/2</option>
@@ -205,7 +193,7 @@
 
                     <!--FIM DIV's NOVAS-->
 
-                    <button type="submit" id="botaoCalc" onclick="calc()">Calcular</button>
+                    <button class="shimmer-btn" type="submit" id="botaoCalc" onclick="calc(); invalido() ">Calcular</button>
                 </div>
 
                 <aside>
