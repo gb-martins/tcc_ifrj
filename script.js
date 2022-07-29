@@ -1,4 +1,4 @@
-var numBombas, divBombaUnica, divRadio, radioSim, radioNao, divBombasIguais, novaDiv= [], divDados, novoH1, novoBr, novoSelect, botaoCalc
+var numBombas, divBombaUnica, divRadio, radioSim, radioNao, divBombasIguais, novaDiv= [], divDados, novoH1, novoBr, novoSelect, botaoCalc, erros
 
 function checking() {
     let checkJanela = document.getElementById("checkJanela")
@@ -31,7 +31,10 @@ function checking() {
 function confBombas() {
     numBombas = parseInt(document.getElementById("numBombas").value)
 
-    if (numBombas == 1) {
+    if (numBombas == 0) {
+        divBombaUnica = document.getElementById("bombaUnica").style.display = "none"
+        divRadio = document.getElementById("radioContainer").style.display = "none"
+    } else if (numBombas == 1) {
         divBombaUnica = document.getElementById("bombaUnica").style.display = "block"
         divRadio = document.getElementById("radioContainer").style.display = "none"
     } else if (numBombas > 1) {
@@ -104,6 +107,16 @@ function checkRadio() {
             botaoCalc = document.getElementById("botaoCalc")
 
             divDados.insertBefore(novaDiv[(i + 1)], botaoCalc)
+        }
+    }
+}
+
+function invalido() {
+    var inputs = document.getElementsByClassName("input")
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value == "") {
+            alert("Preencha todos os campos corretamente.\nLembre-se, 0 também é número! :D")
+            break
         }
     }
 }
@@ -262,7 +275,10 @@ function calc() {
     //D3
     let numAres = (janelaMenor9k + janelaMenor14k + janelaMaior14k + splitMenor10k + splitMenor15k + splitMenor20k + splitMenor30k + splitMaior30k)
     fatorDemanda = [1, 0.7, 0.6, 0.55, 0.53, 0.52, 0.5]
-    if (numAres > 0 && numAres <= 4) {
+    
+    if (numAres == 0) {
+        var d3 = 0
+    } else if (numAres > 0 && numAres <= 4) {
         var d3 = parseFloat((c3 * fatorDemanda[0]).toFixed(2))
     } else if (numAres > 4 && numAres <= 10) {
         d3 = parseFloat((c3 * fatorDemanda[1]).toFixed(2))
@@ -282,7 +298,9 @@ function calc() {
 
     //C5
     var c5
-    if (numBombas == 1) {
+    if (numBombas == 0) {
+        c5 = 0
+    } else if (numBombas == 1) {
         var kVAvalueCV = [0.66, 0.77, 0.87, 1.26, 1.52, 2.17, 2.7, 4.04, 5.03, 6.02, 8.65, 11.54, 14.09, 16.65, 22.1, 25.83, 30.52, 39.74, 48.73, 58.15, 72.28, 95.56, 117.05, 141.29, 190.18]
         var selectBombaUnica = document.getElementById("selectBombaUnica")
         var indiceBombaUnica = selectBombaUnica.selectedIndex
@@ -338,7 +356,10 @@ function calc() {
 
     //D5
     var d5
-    if (numBombas == 1) {
+
+    if (numBombas == 0) {
+        d5 = 0
+    } else if (numBombas == 1) {
         fatorDemanda = [1, 0.75, 0.6333, 0.575, 0.54, 0.5, 0.4714, 0.45, 0.4333, 0.42]
         d5 = parseFloat((c5 * fatorDemanda[0]).toFixed(2))
     } else if(numBombas > 1 && numBombas < 10) {
@@ -369,7 +390,7 @@ function calc() {
     h1CT.innerHTML = "Carga Instalada Total (CT) = " + ct + " kVA"
 
     //DT
-    let dt = parseFloat(parseFloat(d1) + d2 + d3 + d5.toFixed(2))
+    let dt = parseFloat(parseFloat(d1) + d2 + d3 + d5).toFixed(2)
     let h1DT = document.getElementById("h1DT")
     h1DT.innerHTML = "Demanda Total (DT) = " + dt + " kVA"
 }
