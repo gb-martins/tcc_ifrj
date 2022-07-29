@@ -89,7 +89,6 @@ footer {
     position: relative;
     margin: 25px 0px 20px 0px ;
     font-weight: bold;
-
 }
 
 input {
@@ -113,7 +112,8 @@ input {
     cursor: text;
 }
 
-.input:focus+.input-label, .input:valid+.input-label {
+.input:focus+.input-label, 
+.input:valid+.input-label {
     transform: translate(0px, -22px) scale(1);
     left: 0;
     color: var(--cor4);
@@ -130,7 +130,7 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-outer-spin-button, 
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
@@ -279,7 +279,7 @@ aside h1{
 #radioContainer input:checked + label:before {
     background-color: white;
     box-sizing: border-box;
-    border: 4px solid var(--cor5);
+    border: 4px solid var(--cor2);
     padding: 3px;
 }
 
@@ -302,6 +302,7 @@ aside h1{
 h1 {
     font-size: 16px;
     color: var(--cor4);
+    margin-bottom: 10px;
 }
 
 select{
@@ -311,13 +312,91 @@ select{
     appearance: none;
     outline: 0;
     background-color: var(--cor4);
+    border: 0;
+    background-image: none;
 }
 
 select::-ms-expand {
     display: none;
 }
+
 .select {
     position: relative;
     display: flex;
     height: 30px;
+    margin: 20px 10px 5px 10px;
+    background-color: var(--cor4);
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--cor1);
+    cursor: pointer;
+}
+
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    background-color: var(--cor2);
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+
+.select:hover::after {
+    background-color: var(--cor2);
+}
+
+#selectBomba1 {
+    position: relative;
+    display: flex;
+    height: 30px;
+    margin: 20px 10px 5px 10px;
+    background-color: var(--cor4);
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--cor1);
+    cursor: pointer;
+}
+
+#selectBomba2 {
+    position: relative;
+    display: flex;
+    height: 30px;
+    margin: 20px 10px 5px 10px;
+    background-color: var(--cor4);
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--cor1);
+    cursor: pointer;
+}
+
+#selectBomba3 {
+    position: relative;
+    display: flex;
+    height: 30px;
+    margin: 20px 10px 5px 10px;
+    background-color: var(--cor4);
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--cor1);
+    cursor: pointer;
+}
+
+#selectBombasIguais {
+    position: relative;
+    display: flex;
+    height: 30px;
+    margin: 20px 10px 5px 10px;
+    background-color: var(--cor4);
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--cor1);
+    cursor: pointer;
 }
